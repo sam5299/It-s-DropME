@@ -16,7 +16,7 @@ import {
   CloseIcon,
 } from "native-base";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import * as Notifications from 'expo-notifications';
+import * as Notifications from "expo-notifications";
 
 import { AuthContext } from "../Context";
 import axios from "axios";
@@ -86,13 +86,14 @@ const Login = ({ navigation }) => {
       console.log(notificationResult.status);
       //create new token for login user
       // let registerForPushNotificationsAsync = async()=> {
-        //console.log("in registerForPushNofications");
-        const token = await Notifications.getExpoPushTokenAsync();
-        console.log(token);
-        details.notificationToken = token.data;
+      //console.log("in registerForPushNofications");
+      const token = await Notifications.getExpoPushTokenAsync();
+      console.log(token);
+      details.notificationToken = token.data;
       // }
       // registerForPushNotificationsAsync();
       const result = await axios.post(url + "/user/login", details);
+
       console.log("Token", result.headers["x-auth-token"]);
 
       if (result.data) {
