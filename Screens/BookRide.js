@@ -1,7 +1,6 @@
 import { View } from "react-native";
 import React, { useContext, useEffect, useReducer, useState } from "react";
 import SourceDestination from "../Component/SourceDestination";
-import GoogleMap from "../Component/GoogleMap";
 import DateTime from "../Component/DateTime";
 import PickupPoint from "../Component/BookRide/PickupPoint";
 import {
